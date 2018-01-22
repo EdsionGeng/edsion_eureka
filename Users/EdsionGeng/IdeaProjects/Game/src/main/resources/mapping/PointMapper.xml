@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsd.dao.PointMapper">
+<resultMap id="BaseResultMap" type="com.wsd.entity.PointRecord">
+    <id column="id" property="id" jdbcType="INTEGER"/>
+    <result column="user_id" property="user_id" jdbcType="VARCHAR"/>
+    <result column="prize" property="prize" jdbcType="INTEGER"/>
+    <result column="play_time" property="play_time" jdbcType="VARCHAR"/>
+    <result column="guess_content" property="guess_content" jdbcType="VARCHAR"/>
+    <result column="system_content" property="system_content" jdbcType="VARCHAR"/>
+    <result column="guess_coin" property="guess_coin" jdbcType="INTEGER"/>
+    <result column="win_coin" property="win_coin" jdbcType="INTEGER"/>
+</resultMap>
+
+<sql id="Base_Column_List">
+    id,user_id,prize,play_time,guess_content,system_content,guess_coin,win_coin
+</sql>
+
+<!--查询当天用户中奖情况  -->
+
+<select id="queryPrizeByUserID" resultMap="BaseResultMap">
+    select *
+    from PointRecord
+    where user_id = #{user_id，jdbcType=VARCHAR};
+
+</select>
+
+<!-- 添加抽奖记录 -->
+<insert id="insertPointRecord" parameterType="com.wsd.entity.PointRecord">
+    insert into PointRecord (user_id,prize,play_time,guess_content,system_content,guess_coin,win_coin)
+    values
+    (
+    #{user_id},
+    #{prize},
+    #{play_time},
+    #{guess_content},
+    #{system_content},
+    #{guess_coin},
+    #{win_coin})
+</insert>
+
+</mapper>

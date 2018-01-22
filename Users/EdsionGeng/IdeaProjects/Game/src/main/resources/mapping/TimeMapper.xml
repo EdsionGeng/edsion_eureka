@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsd.dao.UserTimeMapper">
+    <resultMap id="BaseResultMap" type="com.wsd.entity.UserTime">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_id" property="user_id" jdbcType="VARCHAR"/>
+        <result column="time" property="time" jdbcType="INTEGER"/>
+        <result column="share" property="share" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+	id,user_id,time,add
+	</sql>
+    <!--抽奖一次减掉一次次数  -->
+
+    <update id="updateFrequency" parameterType="com.wsd.entity.UserTime">
+ UPDATE usertime SET time=time-1 WHERE user_id=#{user_id}
+ </update>
+    <!-- 分享朋友圈加三次 -->
+    <!--UPDATE pointrecord SET frequency=frequency+3 ,prize=2 WHERE user_id=1;-->
+    <update id="updateFrequencyByShare" parameterType="com.wsd.entity.UserTime">
+  update usertime set time=time+3 ,share = 1 where user_id=#{user_id,jdbcType=VARCHAR}
+  </update>
+    <!--新用户插入次数-->
+    <insert id="insertTime" parameterType="com.wsd.entity.UserTime">
+		insert usertime (user_id,time,share)
+		values (
+   #{user_id,jdbcType=VARCHAR},
+   #{time,jdbcType=INTEGER},
+   #{share,jdbcType=INTEGER})
+	</insert>
+
+    <select id="selectFrequency" parameterType="com.wsd.entity.UserTime" resultMap="BaseResultMap">
+	select * from usertime where user_id=#{user_id,jdbcType=VARCHAR};
+	</select>
+    <select id="queryList">
+		select * from usertime;
+	</select>
+</mapper>

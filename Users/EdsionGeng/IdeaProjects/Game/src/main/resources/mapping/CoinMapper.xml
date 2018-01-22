@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsd.dao.UserWealthMapper">
+    <!--<resultMap id="BaseResultMap" type="com.wsd.entity.UserCoin" >-->
+    <!--<id column="id" property="id" jdbcType="INTEGER" />-->
+    <!--<result column="fUid" property="fUid" jdbcType="INTEGER" />-->
+    <!--<result column="fJclx" property="fJclx" jdbcType="INTEGER" />-->
+    <!--<result column="cBdsm" property="cBdsm" jdbcType="VARCHAR" />-->
+    <!--<result column="fBdjf" property="fBdjf" jdbcType="INTEGER" />-->
+    <!--<result column="cCategoryNumber" property="cCategoryNumber" jdbcType="INTEGER" />-->
+    <!--<result column="fRelatedId" property="fRelatedId" jdbcType="INTEGER" />-->
+    <!--<result column="cRelatedId2" property="cRelatedId2" jdbcType="VARCHAR" />-->
+    <!--<result column="fComeFrom" property="fComeFrom" jdbcType="INTEGER" />-->
+    <!--</resultMap>-->
+
+    <select id="insertUserCoin" statementType="CALLABLE" parameterType="java.util.HashMap" resultType="Integer">
+        <![CDATA[
+
+           {#{d,mode=OUT,jdbcType=INTEGER}=call ws_db.dbo.P_JF_JFJLAdd2(
+              #{fUid,mode=IN,jdbcType=INTEGER},
+              #{fJclx,mode=IN,jdbcType=TINYINT},
+              #{cBdsm,mode=IN,jdbcType=NVARCHAR},
+              #{fBdjf,mode=IN,jdbcType=INTEGER},
+              #{cCategoryNumber,mode=IN,jdbcType=CHAR},
+              #{fRelatedId,mode=IN,jdbcType=INTEGER},
+              #{cRelatedId2,mode=IN,jdbcType=NVARCHAR},
+              #{fComeFrom,mode=IN,jdbcType=INTEGER}
+           )}
+
+        ]]>
+    </select>
+
+
+
+
+</mapper>
