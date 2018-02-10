@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="edison_config_server" />
+        <module name="edsionclient" />
+        <module name="edsionfeign" />
+        <module name="edsionribbon" />
+        <module name="edsionserver" />
+        <module name="edsionzuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="edison_config_server" target="1.8" />
+      <module name="edsion_eureka" target="1.8" />
+      <module name="edsionclient" target="1.8" />
+      <module name="edsionfeign" target="1.8" />
+      <module name="edsionribbon" target="1.8" />
+      <module name="edsionserver" target="1.8" />
+      <module name="edsionzuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

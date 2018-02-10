@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/edison_config_server/edison_config_server.iml" filepath="$PROJECT_DIR$/edison_config_server/edison_config_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edsion_eureka.iml" filepath="$PROJECT_DIR$/edsion_eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edsionclient/edsionclient.iml" filepath="$PROJECT_DIR$/edsionclient/edsionclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edsionfeign/edsionfeign.iml" filepath="$PROJECT_DIR$/edsionfeign/edsionfeign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edsionribbon/edsionribbon.iml" filepath="$PROJECT_DIR$/edsionribbon/edsionribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edsionserver/edsionserver.iml" filepath="$PROJECT_DIR$/edsionserver/edsionserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edsionzuul/edsionzuul.iml" filepath="$PROJECT_DIR$/edsionzuul/edsionzuul.iml" />
+    </modules>
+  </component>
+</project>

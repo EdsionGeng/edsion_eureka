@@ -11,6 +11,10 @@
     <modules>
         <module>edsionserver</module>
         <module>edsionclient</module>
+        <module>edsionfeign</module>
+        <module>edsionribbon</module>
+        <module>edsionzuul</module>
+        <module>edison_config_server</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
